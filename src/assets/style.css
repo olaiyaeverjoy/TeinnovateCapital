@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@keyframes stretchleft {
+  0%, 100% {
+    left: 0;
+    width: 6rem; /* starting width */
+  }
+  50% {
+    left: 0;
+    width: 18rem; /* full stretch to right end */
+  }
+}
+
+@keyframes stretchright {
+  0%, 100% {
+    right: 0;
+    width: 6rem;
+  }
+  50% {
+    right: 0;
+    width: 18rem;
+  }
+}
+
+.animate-stretch-left {
+  animation: stretchleft 1.5s ease-in-out infinite;
+}
+
+.animate-stretch-right {
+  animation: stretchright 1.5s ease-in-out infinite 0.75s; /* delayed to alternate */
+}
+
+@keyframes flipIn {
+  0% {
+    transform: rotateY(180deg);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+.card-flip-in {
+  animation: flipIn 0.6s ease-out both;
+}
+
+
+.fade-edges {
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent),
+                      linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-composite: destination-in;
+
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent),
+              linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+  mask-composite: intersect;
+}
