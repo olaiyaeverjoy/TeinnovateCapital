@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar.vue";
 import Footer from "../components/Footer.vue";
 import HeroSection from "@/components/HeroSection.vue";
 import FeatureSection from "@/components/FeatureSection.vue";
+import ProductsSection from "@/components/ProductsSection.vue";
 import { onMounted, ref } from "vue";
 
 import quidlyLogo from "@/assets/logo/quidly-logo.png";
@@ -201,7 +202,8 @@ import quidlyLogo from "@/assets/logo/quidly-logo.png";
     <!--Feature-->
     <FeatureSection/>
 
-    <!--Our Pricing-->
+    <!--Our Products-->
+    <ProductsSection/>
 
     <!--Get started section-->
 

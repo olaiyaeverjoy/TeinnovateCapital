@@ -16,6 +16,7 @@
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "keycloak-js": "^26.2.4",
+    "lucide-vue-next": "^1.0.0",
     "pinia": "^3.0.4",
     "tailwind-scrollbar-hide": "^4.0.0",
     "tailwindcss": "^4.2.0",
