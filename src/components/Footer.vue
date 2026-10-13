@@ -120,7 +120,7 @@ defineProps({
         <div class="flex flex-col md:flex-row justify-between items-center">
           <p class="text-gray-600 text-sm">
             © Copyrights 2026
-            <a class="text-blue-600 hover:underline"> Quidly </a>. All rights
+            <a class="text-blue-600 hover:underline"> Teinnovate Capital </a>. All rights
             reserved.
           </p>
 
