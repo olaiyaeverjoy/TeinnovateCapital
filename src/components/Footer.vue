@@ -21,7 +21,7 @@ defineProps({
         >
           <!-- Quidly as a product -->
           <!-- Product -->
-          <div class="flex flex-col gap-4 lg:max-w-xs">
+          <!-- <div class="flex flex-col gap-4 lg:max-w-xs">
             <img
               v-if="productLogo"
               :src="productLogo"
@@ -41,7 +41,7 @@ defineProps({
               alt="Teinnovate Capital logo"
               class="w-40"
             />
-          </div>
+          </div> -->
 
           <!-- Remaining three columns -->
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-10 lg:gap-16">
@@ -92,7 +92,7 @@ defineProps({
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <i class="fa-brands fa-facebook text-green-600 text-3xl"></i>
+                  <i class="fa-brands fa-facebook text-[#204000] text-3xl"></i>
                 </a>
                 <a
                   href="https://www.linkedin.com/company/90868086/"
@@ -100,14 +100,14 @@ defineProps({
                   rel="noopener noreferrer"
                   class="relative z-50"
                 >
-                  <i class="fa-brands fa-linkedin text-green-600 text-3xl"></i>
+                  <i class="fa-brands fa-linkedin text-[#204000] text-3xl"></i>
                 </a>
                 <a
                   href="https://www.instagram.com/teinnovatecapital_?igsh=NTMxZmY0bjJ2YTQ3"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <i class="fa-brands fa-instagram text-green-600 text-3xl"></i>
+                  <i class="fa-brands fa-instagram text-[#204000] text-3xl"></i>
                 </a>
               </div>
             </div>
