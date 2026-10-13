@@ -4,126 +4,105 @@ import Footer from "../components/Footer.vue";
 import HeroSection from "@/components/HeroSection.vue";
 import FeatureSection from "@/components/FeatureSection.vue";
 import ProductsSection from "@/components/ProductsSection.vue";
+import LagosMap from "@/components/LagosMap.vue";
 import { onMounted, ref } from "vue";
 
 import quidlyLogo from "@/assets/logo/quidly-logo.png";
 </script>
 
 <template>
-  <div class="relative bg-gray-100 px-0 sm:px-0 overflow-hidden">
+  <div class="relative bg-gray-300 px-0 sm:px-0 overflow-hidden">
     <Navbar />
 
     <!--hero section-->
     <HeroSection />
 
     <!--About us-->
-
-    <section
-      id="about"
-      class="relative overflow-hidden bg-[#050505] px-6 py-20 text-white sm:px-10 lg:px-16 lg:py-28"
-    >
-      <div class="mx-auto max-w-7xl space-y-16">
-        <!-- Header -->
-        <header class="max-w-4xl">
-          <div class="mb-6 flex items-center gap-3">
-            <span class="h-1 w-8 rounded-full bg-[#F28C28]"></span>
-            <span
-              class="text-xs font-semibold uppercase tracking-[0.2em] text-white/50"
-            >
+    <div id="about" class="bg-white text-slate-600">
+      <!-- Header + Mission/Focus (contained) -->
+      <section class="px-6 pt-20 sm:px-10 lg:px-16 lg:pt-28">
+        <div class="mx-auto max-w-6xl space-y-20">
+          <header class="max-w-3xl">
+            <!-- <p class="text-sm font-semibold text-slate-500">
               About Teinnovate Capital
-            </span>
-          </div>
+            </p> -->
 
-          <h2
-            class="text-4xl font-extrabold leading-tight tracking-tight sm:text-6xl lg:text-7xl"
-          >
-            Let us
-            <span
-              class="bg-gradient-to-r from-[#F28C28] via-[#55A6F6] to-[#84CC16] bg-clip-text text-transparent"
+            <h2
+              class="mt-4 text-4xl font-extrabold leading-[1.05] tracking-tight text-slate-900 sm:text-6xl"
             >
-              create...
-            </span>
-          </h2>
+              Let us create...
+            </h2>
 
-          <p
-            class="mt-6 max-w-3xl text-base leading-8 text-white/60 sm:text-lg"
-          >
-            <strong class="text-white">TEINNOVATE CAPITAL</strong> builds
-            consumer-centric innovations that deliver exceptional experiences,
-            helping service providers optimize operations, improve
-            profitability, and create lasting value through technology.
-          </p>
-        </header>
-
-        <!-- Mission and Focus -->
-        <div class="grid gap-6 md:grid-cols-2">
-          <article
-            class="rounded-2xl border border-white/10 bg-white/[0.03] p-7 sm:p-9"
-          >
-            <span
-              class="text-xs font-semibold uppercase tracking-[0.2em] text-[#F28C28]"
-            >
-              Our Mission
-            </span>
-
-            <h3 class="mt-5 text-2xl font-bold leading-snug sm:text-3xl">
-              Innovation people actually feel.
-            </h3>
-
-            <p class="mt-5 leading-7 text-white/55">
-              We build consumer-centric solutions that make services more
-              accessible, efficient, and enjoyable. By combining data,
-              automation, and user experience simplicity, we help businesses
-              deliver better products while improving operational performance
-              and profitability.
-            </p>
-
-            <div class="mt-7 h-1 w-16 rounded-full bg-[#F28C28]"></div>
-          </article>
-
-          <article
-            class="rounded-2xl border border-white/10 bg-white/[0.03] p-7 sm:p-9"
-          >
-            <span
-              class="text-xs font-semibold uppercase tracking-[0.2em] text-[#55A6F6]"
-            >
-              Our Focus
-            </span>
-
-            <h3 class="mt-5 text-2xl font-bold leading-snug sm:text-3xl">
-              Better delivery, end to end.
-            </h3>
-
-            <p class="mt-5 leading-7 text-white/55">
-              We focus on transforming how services and products are delivered.
-              Through continuous monitoring, process automation, infrastructure
-              security, and optimization, we create reliable technology
-              foundations that support business growth and sustainable
-              performance.
-            </p>
-
-            <div class="mt-7 h-1 w-16 rounded-full bg-[#55A6F6]"></div>
-          </article>
-        </div>
-
-
-
-        <!-- Quidly Spotlight -->
-        <div
-          class="grid gap-10 overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-[#10151A] via-[#0B0D0D] to-[#11170C] p-7 sm:p-10 lg:grid-cols-2 lg:items-center lg:p-14"
-        >
-          <div>
-            <div
-              class="inline-flex rounded-full border border-[#84CC16]/30 bg-[#84CC16]/10 px-4 py-2 text-xs font-semibold tracking-wide text-[#84CC16]"
-            >
-              Payment Solutions · Quidly
+            <div class="mt-6 flex h-1.5 w-28 overflow-hidden rounded-full">
+              <span class="flex-1 bg-[#F28C28]"></span>
+              <span class="flex-1 bg-[#55A6F6]"></span>
+              <span class="flex-1 bg-[#84CC16]"></span>
             </div>
 
-            <h3 class="mt-6 text-3xl font-bold leading-tight sm:text-4xl">
+            <p class="mt-8 text-lg leading-8 text-slate-600">
+              <strong class="font-semibold text-slate-900"
+                >Teinnovate Capital</strong
+              >
+              builds consumer-centric innovations that deliver exceptional
+              experiences, helping service providers optimize operations,
+              improve profitability, and create lasting value through
+              technology.
+            </p>
+          </header>
+
+          <div class="grid gap-x-14 gap-y-12 md:grid-cols-2">
+            <article class="">
+              <p class="text-sm font-semibold text-[#B45309]">Our mission</p>
+              <h3
+                class="mt-3 text-2xl font-bold leading-snug text-slate-900 sm:text-3xl"
+              >
+                Innovation people actually feel.
+              </h3>
+              <p class="mt-4 leading-7">
+                We build consumer-centric solutions that make services more
+                accessible, efficient, and enjoyable. By combining data,
+                automation, and user experience simplicity, we help businesses
+                deliver better products while improving operational performance
+                and profitability.
+              </p>
+            </article>
+
+            <article class="">
+              <p class="text-sm font-semibold text-[#1D6FC4]">Our focus</p>
+              <h3
+                class="mt-3 text-2xl font-bold leading-snug text-slate-900 sm:text-3xl"
+              >
+                Better delivery, end to end.
+              </h3>
+              <p class="mt-4 leading-7">
+                We focus on transforming how services and products are
+                delivered. Through continuous monitoring, process automation,
+                infrastructure security, and optimization, we create reliable
+                technology foundations that support business growth and
+                sustainable performance.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quidly: background spans the full width, content stays contained -->
+      <section
+        class="mt-20 w-full bg-gradient-to-r from-orange-200 to-slate-200 px-6 py-16 sm:px-10 lg:px-16 lg:py-20"
+      >
+        <div class="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2 lg:gap-16">
+          <div>
+            <p class="text-sm font-semibold text-[#4D7C0F]">
+              Quidly, our payments platform
+            </p>
+
+            <h3
+              class="mt-3 text-3xl font-bold leading-tight text-slate-900 sm:text-4xl"
+            >
               Transforming payments in Nigeria.
             </h3>
 
-            <p class="mt-5 leading-7 text-white/55">
+            <p class="mt-5 leading-7 text-slate-700">
               Quidly is our payment solutions platform, focused on delivering
               innovative technology for the Nigerian payment ecosystem. From
               simple-to-integrate payment APIs to actionable business insights
@@ -132,80 +111,86 @@ import quidlyLogo from "@/assets/logo/quidly-logo.png";
             </p>
           </div>
 
-          <div class="space-y-4">
-            <div
-              class="flex gap-4 rounded-xl border border-white/10 bg-black/20 p-5"
-            >
-              <div
-                class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#F28C28]/10 text-[#F28C28]"
-              >
-                <span class="text-lg">01</span>
-              </div>
+          <ul class="divide-y divide-slate-900/10 self-center">
+            <li class="flex gap-4 py-5 first:pt-0">
+              <span
+                class="mt-2 h-2.5 w-2.5 shrink-0 rounded-sm bg-[#F28C28]"
+              ></span>
               <div>
-                <h4 class="font-semibold">Simple-to-integrate payment APIs</h4>
-                <p class="mt-2 text-sm leading-6 text-white/45">
+                <h4 class="font-semibold text-slate-900">
+                  Simple-to-integrate payment APIs
+                </h4>
+                <p class="mt-1 text-sm leading-6 text-slate-700">
                   Connect payment capabilities with less integration complexity.
                 </p>
               </div>
-            </div>
-
-            <div
-              class="flex gap-4 rounded-xl border border-white/10 bg-black/20 p-5"
-            >
-              <div
-                class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#55A6F6]/10 text-[#55A6F6]"
-              >
-                <span class="text-lg">02</span>
-              </div>
+            </li>
+            <li class="flex gap-4 py-5">
+              <span
+                class="mt-2 h-2.5 w-2.5 shrink-0 rounded-sm bg-[#55A6F6]"
+              ></span>
               <div>
-                <h4 class="font-semibold">Data insights for businesses</h4>
-                <p class="mt-2 text-sm leading-6 text-white/45">
+                <h4 class="font-semibold text-slate-900">
+                  Data insights for businesses
+                </h4>
+                <p class="mt-1 text-sm leading-6 text-slate-700">
                   Understand payment activity and make informed business
                   decisions.
                 </p>
               </div>
-            </div>
-
-            <div
-              class="flex gap-4 rounded-xl border border-white/10 bg-black/20 p-5"
-            >
-              <div
-                class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#84CC16]/10 text-[#84CC16]"
-              >
-                <span class="text-lg">03</span>
-              </div>
+            </li>
+            <li class="flex gap-4 py-5 last:pb-0">
+              <span
+                class="mt-2 h-2.5 w-2.5 shrink-0 rounded-sm bg-[#84CC16]"
+              ></span>
               <div>
-                <h4 class="font-semibold">Managed payment integration</h4>
-                <p class="mt-2 text-sm leading-6 text-white/45">
+                <h4 class="font-semibold text-slate-900">
+                  Managed payment integration
+                </h4>
+                <p class="mt-1 text-sm leading-6 text-slate-700">
                   Support businesses through payment integration and
                   implementation.
                 </p>
               </div>
-            </div>
-          </div>
+            </li>
+          </ul>
         </div>
 
-        <!-- Closing statement -->
-        <div class="border-t border-white/10 pt-8">
-          <p
-            class="max-w-3xl text-xl font-medium leading-relaxed text-white/70 sm:text-2xl"
-          >
-            Different challenges.
-            <span class="text-[#F28C28]">Innovative thinking.</span>
-            <span class="text-[#55A6F6]">Smarter technology.</span>
-            <span class="text-[#84CC16]">Meaningful impact.</span>
-          </p>
-        </div>
-      </div>
-    </section>
+        <!-- Closing statement (contained) -->
+        <section class="px-6 py-16 sm:px-10 lg:px-16 lg:py-20">
+          <div class="mx-auto max-w-6xl border-t border-slate-200 pt-8">
+            <p
+              class="max-w-3xl text-xl font-semibold leading-relaxed text-slate-800 sm:text-2xl"
+            >
+              Different challenges.
+              <span class="text-[#C2610A]">Innovative thinking.</span>
+              <span class="text-[#1D6FC4]">Smarter technology.</span>
+              <span class="text-[#4D7C0F]">Meaningful impact.</span>
+            </p>
+          </div>
+        </section>
+
+        <!-- <svg
+          class="absolute bottom-0 left-0 block h-12 w-full sm:h-16 lg:h-24"
+          viewBox="0 50 1861 79"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          <path d="M0 90 Q930.5 20 1861 90 V129 H0 Z" class="fill-white" />
+        </svg> -->
+      </section>
+    </div>
 
     <!--Feature-->
-    <FeatureSection/>
+    <FeatureSection />
 
     <!--Our Products-->
-    <ProductsSection/>
+    <ProductsSection />
 
-    <!--Get started section-->
+    <!--Map-->
+    <LagosMap/>
+
+
 
     <Footer product-name="Quidly" :product-logo="quidlyLogo" />
   </div>

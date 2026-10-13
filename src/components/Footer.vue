@@ -8,41 +8,40 @@ defineProps({
     type: String,
     default: "",
   },
-})
+});
 </script>
 
 <template>
-  <footer class="bg-white">
+  <footer class="bg-black">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Middle Section -->
-      <div class="mt-12 pt-16 pb-12">
+      <div class=" pt-16 pb-12">
         <div
           class="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-18"
         >
           <!-- Quidly as a product -->
           <!-- Product -->
-<div class="flex flex-col gap-4 lg:max-w-xs">
-  <img
-    v-if="productLogo"
-    :src="productLogo"
-    :alt="`${productName} logo`"
-    class="w-[120px] h-[40px] object-contain object-left"
-  />
+          <div class="flex flex-col gap-4 lg:max-w-xs">
+            <img
+              v-if="productLogo"
+              :src="productLogo"
+              :alt="`${productName} logo`"
+              class="w-[120px] h-[40px] object-contain object-left"
+            />
 
-  <p class="text-gray-600 leading-relaxed">
-    A product of
-    <span class="font-semibold text-gray-700">
-      Teinnovate Capital
-    </span>,
-    licensed by the Central Bank of Nigeria.
-  </p>
+            <p class="text-gray-600 leading-relaxed">
+              A product of
+              <span class="font-semibold text-gray-700">
+                Teinnovate Capital </span
+              >, licensed by the Central Bank of Nigeria.
+            </p>
 
-  <img
-    src="../assets/img/teinnovate-logo.jpeg"
-    alt="Teinnovate Capital logo"
-    class="w-40"
-  />
-</div>
+            <img
+              src="../assets/img/teinnovate-logo.jpeg"
+              alt="Teinnovate Capital logo"
+              class="w-40"
+            />
+          </div>
 
           <!-- Remaining three columns -->
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-10 lg:gap-16">
@@ -50,7 +49,7 @@ defineProps({
             <div>
               <h3 class="text-xl font-semibold mb-4">Products</h3>
               <ul class="space-y-4 text-gray-600">
-               <li>
+                <li>
                   <a class="hover:text-blue-600">Quidly Payment widget</a>
                 </li>
                 <li>
@@ -58,13 +57,13 @@ defineProps({
                     SellDesk
                   </RouterLink>
                 </li>
-               
+
                 <li>
-                    <RouterLink to="/pay4me" class="hover:text-blue-600">
+                  <RouterLink to="/pay4me" class="hover:text-blue-600">
                     Pay4Me
                   </RouterLink>
                 </li>
-               
+
                 <li><a class="hover:text-blue-600">CreditList</a></li>
                 <li><a class="hover:text-blue-600">Collect@Quidly</a></li>
               </ul>
