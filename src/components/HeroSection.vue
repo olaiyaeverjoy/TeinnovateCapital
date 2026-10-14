@@ -163,8 +163,7 @@ onBeforeUnmount(() => {
         </h1>
 
         <p class="mt-3 text-base md:text-xl text-white/90 leading-relaxed">
-          ... innovating to create sustainable developments in all sector [
-          verticals ]: fintech | agrictech | medtech | govtech | x-tech
+          ... innovating to create sustainable developments in all sector: fintech | agrictech | medtech | govtech | x-tech
         </p>
       </div>
     </div>
@@ -203,12 +202,12 @@ onBeforeUnmount(() => {
 
 .hero__copy {
   position: absolute;
-  left: 6%;
+  right: 12%;
   top: 50%;
   transform: translateY(-50%);
   max-width: 640px;
- 
   z-index: 5;
+  text-align: right;
   pointer-events: none; /* let the cursor reach the particles through the text */
 }
 

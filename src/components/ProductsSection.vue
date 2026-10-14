@@ -52,7 +52,7 @@ const products = [
       <!-- Section heading -->
       <div class="mb-12 flex flex-col justify-between gap-5 md:mb-16 md:flex-row md:items-end">
         <div class="max-w-2xl">
-          <span class="text-xs font-bold uppercase tracking-[0.25em] text-cyan-700">
+          <span class="text-xs font-bold uppercase tracking-[0.25em] text-[#2b7fff]">
             Our ecosystem
           </span>
 

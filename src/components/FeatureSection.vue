@@ -87,7 +87,7 @@ onUnmounted(() => {
         >
           <span
             class="mb-5 text-xs font-semibold uppercase tracking-[0.25em]
-                   text-cyan-300"
+                   text-[#2b7fff]"
           >
             Who we are
           </span>
@@ -158,7 +158,7 @@ onUnmounted(() => {
         >
           <span
             class="mb-3 text-xs font-semibold uppercase
-                   tracking-[0.25em] text-cyan-300"
+                   tracking-[0.25em] text-[#2b7fff]"
           >
             {{ slides[activeIndex].category }}
           </span>
