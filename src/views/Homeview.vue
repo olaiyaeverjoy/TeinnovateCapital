@@ -12,7 +12,6 @@ import quidlyLogo from "@/assets/logo/quidly-logo.png";
 // import AOS from "aos";
 // import "aos/dist/aos.css";
 
-
 // onMounted(() => {
 //   AOS.init({
 //     duration: 800,
@@ -24,7 +23,7 @@ import quidlyLogo from "@/assets/logo/quidly-logo.png";
 </script>
 
 <template>
-  <div class="relative bg-gray-300 px-0 sm:px-0 ">
+  <div class="relative bg-gray-300 px-0 sm:px-0">
     <Navbar />
 
     <!--hero section-->

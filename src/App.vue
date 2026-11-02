@@ -9,7 +9,7 @@ const whatsappNumber = '+2348132822731';
   <RouterView />
 
   <!-- WhatsApp Support Button -->
-  <a
+  <!-- <a
     :href="`https://wa.me/${whatsappNumber}?text=Hello%20Quidly%2C%20I%20want%20to%20know%20more%20about%20your%20services.`"
     target="_blank"
     rel="noopener noreferrer"
@@ -31,6 +31,6 @@ const whatsappNumber = '+2348132822731';
     >
       Chat with us on WhatsApp
     </div>
-  </a>
+  </a> -->
 </template>
 ```
