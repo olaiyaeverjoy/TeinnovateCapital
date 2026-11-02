@@ -8,41 +8,62 @@ import LagosMap from "@/components/LagosMap.vue";
 import { onMounted, ref } from "vue";
 
 import quidlyLogo from "@/assets/logo/quidly-logo.png";
+
+// import AOS from "aos";
+// import "aos/dist/aos.css";
+
+
+// onMounted(() => {
+//   AOS.init({
+//     duration: 800,
+//     easing: "ease-in-out",
+//     once: true,
+//     offset: 100,
+//   });
+// });
 </script>
 
 <template>
-  <div class="relative bg-gray-300 px-0 sm:px-0 overflow-hidden">
+  <div class="relative bg-gray-300 px-0 sm:px-0 ">
     <Navbar />
 
     <!--hero section-->
     <HeroSection />
 
     <!--About us-->
+
     <div id="about" class="bg-white text-slate-600">
-      <!-- Header + Mission/Focus (contained) -->
+      <!-- Header + Mission/Focus -->
       <section class="px-6 pt-20 sm:px-10 lg:px-16 lg:pt-28">
         <div class="mx-auto max-w-6xl space-y-20">
+          <!-- About Header -->
           <header class="max-w-3xl">
-            <!-- <p class="text-sm font-semibold text-slate-500">
-              About Teinnovate Capital
-            </p> -->
-
             <h2
+              data-aos="fade-up"
+              data-aos-duration="900"
               class="mt-4 text-4xl font-extrabold leading-[1.05] tracking-tight text-slate-900 sm:text-6xl"
             >
               Let us create...
             </h2>
 
-            <div class="mt-6 flex h-1.5 w-28 overflow-hidden rounded-full">
+            <div
+              data-aos="fade-right"
+              data-aos-delay="200"
+              class="mt-6 flex h-1.5 w-28 overflow-hidden rounded-full"
+            >
               <span class="flex-1 bg-[#F28C28]"></span>
               <span class="flex-1 bg-[#55A6F6]"></span>
               <span class="flex-1 bg-[#84CC16]"></span>
             </div>
 
-            <p class="mt-8 text-lg leading-8 text-slate-600">
-              <strong class="font-semibold text-slate-900"
-                >Teinnovate Capital</strong
-              >
+            <p
+              data-aos="fade-up"
+              data-aos-delay="300"
+              class="mt-8 text-lg leading-8 text-slate-600"
+            >
+              <strong class="font-semibold text-slate-900">
+                Teinnovate Capital
+              </strong>
               builds consumer-centric innovations that deliver exceptional
               experiences, helping service providers optimize operations,
               improve profitability, and create lasting value through
@@ -50,14 +71,21 @@ import quidlyLogo from "@/assets/logo/quidly-logo.png";
             </p>
           </header>
 
+          <!-- Mission and Focus -->
           <div class="grid gap-x-14 gap-y-12 md:grid-cols-2">
-            <article class="">
+            <article
+              data-aos="fade-right"
+              data-aos-duration="900"
+              data-aos-delay="100"
+            >
               <p class="text-sm font-semibold text-[#B45309]">Our mission</p>
+
               <h3
                 class="mt-3 text-2xl font-bold leading-snug text-slate-900 sm:text-3xl"
               >
                 Innovation people actually feel.
               </h3>
+
               <p class="mt-4 leading-7">
                 We build consumer-centric solutions that make services more
                 accessible, efficient, and enjoyable. By combining data,
@@ -67,13 +95,19 @@ import quidlyLogo from "@/assets/logo/quidly-logo.png";
               </p>
             </article>
 
-            <article class="">
+            <article
+              data-aos="fade-left"
+              data-aos-duration="900"
+              data-aos-delay="250"
+            >
               <p class="text-sm font-semibold text-[#1D6FC4]">Our focus</p>
+
               <h3
                 class="mt-3 text-2xl font-bold leading-snug text-slate-900 sm:text-3xl"
               >
                 Better delivery, end to end.
               </h3>
+
               <p class="mt-4 leading-7">
                 We focus on transforming how services and products are
                 delivered. Through continuous monitoring, process automation,
@@ -86,12 +120,13 @@ import quidlyLogo from "@/assets/logo/quidly-logo.png";
         </div>
       </section>
 
-      <!-- Quidly: background spans the full width, content stays contained -->
+      <!-- Quidly Section -->
       <section
         class="mt-20 w-full bg-gradient-to-r from-orange-200 to-slate-200 px-6 py-16 sm:px-10 lg:px-16 lg:py-20"
       >
         <div class="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2 lg:gap-16">
-          <div>
+          <!-- Quidly Description -->
+          <div data-aos="fade-right" data-aos-duration="1000">
             <p class="text-sm font-semibold text-[#4D7C0F]">
               Quidly, our payments platform
             </p>
@@ -111,11 +146,17 @@ import quidlyLogo from "@/assets/logo/quidly-logo.png";
             </p>
           </div>
 
+          <!-- Quidly Features -->
           <ul class="divide-y divide-slate-900/10 self-center">
-            <li class="flex gap-4 py-5 first:pt-0">
+            <li
+              data-aos="fade-up"
+              data-aos-delay="100"
+              class="flex gap-4 py-5 first:pt-0"
+            >
               <span
                 class="mt-2 h-2.5 w-2.5 shrink-0 rounded-sm bg-[#F28C28]"
               ></span>
+
               <div>
                 <h4 class="font-semibold text-slate-900">
                   Simple-to-integrate payment APIs
@@ -125,10 +166,12 @@ import quidlyLogo from "@/assets/logo/quidly-logo.png";
                 </p>
               </div>
             </li>
-            <li class="flex gap-4 py-5">
+
+            <li data-aos="fade-up" data-aos-delay="250" class="flex gap-4 py-5">
               <span
                 class="mt-2 h-2.5 w-2.5 shrink-0 rounded-sm bg-[#55A6F6]"
               ></span>
+
               <div>
                 <h4 class="font-semibold text-slate-900">
                   Data insights for businesses
@@ -139,10 +182,16 @@ import quidlyLogo from "@/assets/logo/quidly-logo.png";
                 </p>
               </div>
             </li>
-            <li class="flex gap-4 py-5 last:pb-0">
+
+            <li
+              data-aos="fade-up"
+              data-aos-delay="400"
+              class="flex gap-4 py-5 last:pb-0"
+            >
               <span
                 class="mt-2 h-2.5 w-2.5 shrink-0 rounded-sm bg-[#84CC16]"
               ></span>
+
               <div>
                 <h4 class="font-semibold text-slate-900">
                   Managed payment integration
@@ -156,9 +205,13 @@ import quidlyLogo from "@/assets/logo/quidly-logo.png";
           </ul>
         </div>
 
-        <!-- Closing statement (contained) -->
+        <!-- Closing Statement -->
         <section class="px-6 py-16 sm:px-10 lg:px-16 lg:py-20">
-          <div class="mx-auto max-w-6xl border-t border-slate-200 pt-8">
+          <div
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            class="mx-auto max-w-6xl border-t border-slate-200 pt-8"
+          >
             <p
               class="max-w-3xl text-xl font-semibold leading-relaxed text-slate-800 sm:text-2xl"
             >
@@ -169,15 +222,6 @@ import quidlyLogo from "@/assets/logo/quidly-logo.png";
             </p>
           </div>
         </section>
-
-        <!-- <svg
-          class="absolute bottom-0 left-0 block h-12 w-full sm:h-16 lg:h-24"
-          viewBox="0 50 1861 79"
-          preserveAspectRatio="none"
-          aria-hidden="true"
-        >
-          <path d="M0 90 Q930.5 20 1861 90 V129 H0 Z" class="fill-white" />
-        </svg> -->
       </section>
     </div>
 
@@ -188,9 +232,7 @@ import quidlyLogo from "@/assets/logo/quidly-logo.png";
     <ProductsSection />
 
     <!--Map-->
-    <LagosMap/>
-
-
+    <LagosMap />
 
     <Footer product-name="Quidly" :product-logo="quidlyLogo" />
   </div>

@@ -1,144 +1,109 @@
+<script setup>
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 
-<script setup lang="ts">
-import { ArrowUpRight, CreditCard, Store, Wallet, Handshake } from 'lucide-vue-next'
+// Adjust names/paths to match your files in src/assets
+import payment from "../assets/img/payment.jpg"
+import payment1 from "../assets/img/payment1.jpg"
+import invoice from "../assets/img/invoice.jpg"
+
 
 const products = [
   {
-    number: '01',
-    name: 'Quidly',
-    category: 'PAYMENT SOLUTIONS',
-    description:
-      'Accept payments seamlessly, manage transactions, and give your customers a better payment experience.',
-    url: 'https://www.quidly.ng/',
-    icon: CreditCard,
-    color: 'bg-cyan-50 text-cyan-700',
+    name: 'Take payments',
+    text: 'Accept card and contactless payments from your phone or a card reader.',
+    img: payment,
+    cta: { label: 'See payment options', href: '#' },
   },
   {
-    number: '02',
-    name: 'SellDesk',
-    category: 'BUSINESS MANAGEMENT',
-    description:
-      'Create professional invoices, track payments in real time, and stay in control of your business.',
-    url: 'https://www.quidly.ng/selldesk',
-    icon: Store,
-    color: 'bg-violet-50 text-violet-700',
+    name: 'Run your business',
+    text: 'Manage orders, stock and staff from one register.',
+    img: payment1,
+    cta: { label: 'Explore the register', href: '#' },
   },
   {
-    number: '03',
-    name: 'Pay4me',
-    category: 'FLEXIBLE PAYMENTS',
-    description:
-      'Make delegated payments easier with a solution designed to simplify the payment experience.',
-    url: 'https://www.quidly.ng/',
-    icon: Wallet,
-    color: 'bg-amber-50 text-amber-700',
-  },
-  {
-    number: '04',
-    name: 'Partners',
-    category: 'GROW WITH US',
-    description:
-      'Connect with us to explore partnerships, collaborate on ideas, and create new opportunities.',
-    url: 'https://www.teinnovatecapital.ng/',
-    icon: Handshake,
-    color: 'bg-emerald-50 text-emerald-700',
+    name: 'Manage your money',
+    text: 'Send invoices, track expenses and move money without leaving the app.',
+    img: invoice,
+    cta: { label: 'Open an account', href: '#' },
   },
 ]
+
+const active = ref(0)
+const blocks = ref([])
+
+let observer
+let mq
+
+// Desktop: trigger when a block crosses the middle of the viewport.
+// Mobile: the pinned image covers the top ~40%, so the trigger line sits lower.
+function setupObserver() {
+  observer?.disconnect()
+  const rootMargin = mq.matches ? '-50% 0px -50% 0px' : '-65% 0px -35% 0px'
+
+  observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) active.value = Number(entry.target.dataset.index)
+      }
+    },
+    { rootMargin }
+  )
+  blocks.value.forEach((el) => el && observer.observe(el))
+}
+
+onMounted(() => {
+  mq = window.matchMedia('(min-width: 1024px)')
+  setupObserver()
+  mq.addEventListener('change', setupObserver) // rebuild on resize / rotation
+})
+
+onBeforeUnmount(() => {
+  observer?.disconnect()
+  mq?.removeEventListener('change', setupObserver)
+})
 </script>
 
 <template>
-  <section id="products" class="bg-[#f7f8fa] px-5 py-20 sm:px-8 lg:px-12 lg:py-28">
-    <div class="mx-auto max-w-7xl">
-      <!-- Section heading -->
-      <div class="mb-12 flex flex-col justify-between gap-5 md:mb-16 md:flex-row md:items-end">
-        <div class="max-w-2xl">
-          <span class="text-xs font-bold uppercase tracking-[0.25em] text-[#2b7fff]">
-            Our ecosystem
-          </span>
+  <section class="mx-auto max-w-6xl px-6 py-16">
+    <h2 class="max-w-xl text-3xl font-semibold tracking-tight sm:text-4xl">
+      Made for how you trade
+    </h2>
 
-          <h2 class="mt-4 text-4xl font-bold tracking-tight text-[#18232d] sm:text-5xl lg:text-6xl">
-            Products built for
-            <span class="text-cyan-700">progress.</span>
-          </h2>
+    <div class="mt-8 grid lg:mt-12 lg:grid-cols-2 lg:gap-12">
+      <!-- Image column
+           Mobile: whole column is sticky, so the image pins to the top of the screen.
+           Desktop: column is static and the inner wrapper is sticky instead. -->
+      <div class="sticky top-0 z-10 bg-white py-4 lg:relative lg:top-auto lg:z-auto lg:bg-transparent lg:py-0">
+        <div class="flex h-[40vh] items-center lg:sticky lg:top-0 lg:h-screen">
+          <div class="relative h-full w-full overflow-hidden rounded-2xl bg-neutral-100 lg:aspect-square lg:h-auto">
+            <img
+              v-for="(p, i) in products"
+              :key="p.name"
+              :src="p.img"
+              :alt="p.name"
+              class="absolute inset-0 h-full w-full object-cover transition duration-500 ease-out motion-reduce:transition-none"
+              :class="i === active ? 'scale-100 opacity-100' : 'scale-95 opacity-0'"
+            />
+          </div>
         </div>
-
-        <p class="max-w-md text-base leading-7 text-gray-600 sm:text-lg">
-          Explore our solutions designed to simplify processes, empower
-          businesses, and create better experiences.
-        </p>
       </div>
 
-      <!-- Product cards -->
-      <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:gap-6">
-        <a
-          v-for="product in products"
-          :key="product.number"
-          :href="product.url"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="group relative flex min-h-[310px] flex-col overflow-hidden
-                 rounded-2xl border border-gray-200 bg-white p-7
-                 transition-all duration-300 hover:-translate-y-1
-                 hover:border-cyan-200 hover:shadow-xl hover:shadow-gray-200/60
-                 sm:min-h-[340px] sm:p-9"
+      <!-- Scrolling text -->
+      <div>
+        <article
+          v-for="(p, i) in products"
+          :key="p.name"
+          :ref="(el) => (blocks[i] = el)"
+          :data-index="i"
+          class="flex min-h-[60vh] flex-col justify-center gap-4 transition-opacity duration-300 motion-reduce:transition-none lg:min-h-screen lg:gap-6"
+          :class="i === active ? 'lg:opacity-100' : 'lg:opacity-40'"
         >
-          <!-- Top row -->
-          <div class="flex items-start justify-between">
-            <div
-              :class="[
-                'flex h-14 w-14 items-center justify-center rounded-2xl',
-                product.color,
-              ]"
-            >
-              <component :is="product.icon" :size="27" :stroke-width="1.7" />
-            </div>
-
-            <span class="text-sm font-medium text-gray-400">
-              {{ product.number }}
-            </span>
-          </div>
-
-          <!-- Product information -->
-          <div class="mt-9">
-            <span class="text-[10px] font-bold tracking-[0.2em] text-cyan-700">
-              {{ product.category }}
-            </span>
-
-            <h3 class="mt-2 text-2xl font-bold text-[#18232d] sm:text-3xl">
-              {{ product.name }}
-            </h3>
-
-            <p class="mt-3 max-w-md text-sm leading-7 text-gray-600 sm:text-base">
-              {{ product.description }}
-            </p>
-          </div>
-
-          <!-- Link -->
-          <div class="mt-auto flex items-center justify-between pt-8">
-            <span
-              class="text-sm font-semibold text-[#18232d]
-                     transition-colors group-hover:text-cyan-700"
-            >
-              Explore product
-            </span>
-
-            <span
-              class="flex h-10 w-10 items-center justify-center rounded-full
-                     border border-gray-200 text-gray-700
-                     transition-all duration-300
-                     group-hover:border-cyan-700 group-hover:bg-cyan-700
-                     group-hover:text-white"
-            >
-              <ArrowUpRight :size="20" />
-            </span>
-          </div>
-
-          <!-- Decorative hover accent -->
-          <div
-            class="absolute bottom-0 left-0 h-1 w-0 bg-cyan-600
-                   transition-all duration-500 group-hover:w-full"
-          />
-        </a>
+          <h3 class="text-2xl font-semibold lg:text-4xl">{{ p.name }}</h3>
+          <p class="max-w-md text-lg text-neutral-600">{{ p.text }}</p>
+          <a :href="p.cta.href" class="w-fit font-medium underline underline-offset-4">
+            {{ p.cta.label }}
+          </a>
+        </article>
       </div>
     </div>
   </section>
