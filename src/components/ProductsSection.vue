@@ -5,11 +5,25 @@ import payment1 from '../assets/img/payment1.jpg'
 import invoice from '../assets/img/invoice.jpg'
 
 const products = [
-  { name: 'Take payments', text: 'Accept card and contactless payments from your phone or a card reader.', img: payment, cta: { label: 'See payment options', href: '#' } },
-  { name: 'Run your business', text: 'Manage orders, stock and staff from one register.', img: payment1, cta: { label: 'Explore the register', href: '#' } },
-  { name: 'Manage your money', text: 'Send invoices, track expenses and move money without leaving the app.', img: invoice, cta: { label: 'Open an account', href: '#' } },
+  {
+    name: 'Quidly',
+    text: 'A payment widget you can drop into any site or app to accept payments in minutes.',
+    img: payment,
+    cta: { label: 'Explore Quidly', href: '#' },
+  },
+  {
+    name: 'Ticketing',
+    text: 'Create events, sell tickets and check in guests, all in one place.',
+    img: payment1,
+    cta: { label: 'Explore ticketing', href: '#' },
+  },
+  {
+    name: 'Selldesk',
+    text: 'Send professional invoices, track payments and keep your sales organised.',
+    img: invoice,
+    cta: { label: 'Explore Selldesk', href: '#' },
+  },
 ]
-
 const active = ref(0)
 const blocks = [] // plain array: no reactivity needed
 let io, mq
